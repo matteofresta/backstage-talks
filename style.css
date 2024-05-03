@@ -42,6 +42,10 @@ html {
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
+    scroll-behavior: smooth;
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
 }
 
 /* Remove default margin in favour of better control in authored CSS */
@@ -60,6 +64,7 @@ ol[role='list'] {
 body {
     min-height: 100%;
     line-height: 1.5;
+    transition: background-color 600ms;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -104,6 +109,11 @@ textarea:not([rows]) {
     scroll-margin-block: 5ex;
 }
 
+::-webkit-scrollbar
+{
+    display: none;
+}
+
 /* Utilities CSS */
 
 .text-clr-900 { color: var(--clr-primary-900); }
@@ -119,6 +129,7 @@ textarea:not([rows]) {
 .wrapper-nav
 {
     width: 100%;
+    position: fixed;
     height: 4rem;
     display: flex;
     justify-content: space-between;
@@ -146,11 +157,6 @@ header img
     text-decoration: underline;
 }
 
-.carousel
-{
-
-}
-
 .carousel-inner {
     display: flex;
     flex-direction: column;
@@ -161,14 +167,159 @@ header img
 
 .carousel-item
 {
+    --gap-cols: .5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    scroll-snap-align: center;
     align-content: center;
+    height: 100vh;
     margin-block: 10rem;
+}
+
+.carousel .col
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
 }
 
 .carousel-item img
 {
-    width: 28rem;
+    width: 25rem;
 }
+
+.carousel-item .col-info
+{
+    margin-block: 1rem;
+}
+
+.carousel-item a
+{
+    color: var(--clr-primary-100);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.carousel-item a:hover
+{
+    text-decoration: underline;
+}
+
+.carousel-item .col-info
+{
+    display: flex;
+    gap: var(--gap-cols);
+    align-items: center;
+    justify-content: center;
+}
+
+.col-info-buy
+{
+    display: flex;
+    align-self: center;
+    gap: var(--gap-cols);
+}
+
+.col-info-buy-pink
+{
+    display: flex;
+    align-self: center;
+    gap: var(--gap-cols);
+    margin-bottom: 1rem;
+}
+
+.carousel-item .col-info-pink
+{
+    display: flex;
+    gap: var(--gap-cols);
+    align-items: center;
+    justify-content: center;
+}
+
+.col-info-buy-pink a,
+.col-info-pink a
+{
+    color: var(--clr-primary-200);
+}
+
+footer
+{
+    --gap-footer: .5rem;
+    --margin-space: 2rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+footer .col-company
+{
+    display: flex;
+    width: 15%;
+    flex-direction: column;
+    margin-left: var(--margin-space);
+    margin-bottom: var(--margin-space);
+}
+
+footer .col-company-trademark
+{
+    display: flex;
+    gap: var(--gap-footer);
+    margin-bottom: 2rem;
+}
+
+footer .col-company-trademark
+{
+    font-size: var(--fs-400);
+    font-weight: 200;
+}
+
+
+
+footer .col
+{
+    display: flex;
+    margin-top: 2.5rem;
+    margin-right: var(--margin-space);
+    margin-bottom: var(--margin-space);
+}
+
+.col li
+{
+    margin-block: .4rem;
+}
+
+.col a
+{
+    text-decoration: none;
+}
+
+.col a:hover
+{
+    text-decoration: underline;
+}
+
+@media (max-width: 768px)
+{
+    .wrapper-nav
+    {
+        position: relative;
+    }
+
+    .wrapper-nav p, a
+    {
+        display: none;
+    }
+    footer{display: none}
+}
+
+
+
+
+
+
