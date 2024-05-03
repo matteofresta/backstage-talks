@@ -1,0 +1,174 @@
+:root
+{
+    --clr-primary-900: #000000;
+    --clr-primary-700: #E31710;
+    --clr-primary-600: #213FBB;
+    --clr-primary-500: #FABE01;
+    --clr-primary-400: #F9651A;
+    --clr-primary-300: #2DC1B5;
+    --clr-primary-200: #FA608C;
+    --clr-primary-100: #FFFFFF;
+
+    --ff-backstage-talks: "backstage-talks", sans-serif;
+
+    --fs-600: 1.125rem;
+    --fs-400: .75rem;
+
+    --fw-700: 700;
+}
+
+@font-face
+{
+    font-family: 'backstage-talks';
+    src: url("font/backstage-talks.woff2") format("woff2");
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff-backstage-talks);
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+    margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100%;
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+/* Utilities CSS */
+
+.text-clr-900 { color: var(--clr-primary-900); }
+.text-clr-100 { color: var(--clr-primary-100); }
+
+.fs-600 { font-size: var(--fs-600); }
+.fs-400 { font-size: var(--fs-400); }
+
+.fw-700 { font-weight: var(--fw-700); }
+
+/* Styling CSS */
+
+.wrapper-nav
+{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img
+{
+    width: 16rem;
+}
+
+.wrapper-nav *
+{
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+.wrapper-nav a
+{
+    text-decoration: none;
+}
+
+.wrapper-nav a:hover
+{
+    text-decoration: underline;
+}
+
+.carousel
+{
+
+}
+
+.carousel-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-block: 10rem;
+}
+
+.carousel-item img
+{
+    width: 28rem;
+}
