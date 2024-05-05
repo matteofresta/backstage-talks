@@ -308,14 +308,18 @@ footer .col
 {
     .wrapper-nav
     {
-        position: relative;
+        position: fixed;
     }
 
     .wrapper-nav p, a
     {
         display: none;
     }
-    footer{display: none}
+    footer
+    {
+        position: relative;
+        flex-direction: column;
+    }
 }
 
 
